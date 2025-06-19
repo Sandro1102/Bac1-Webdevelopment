@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure Flexbox principale */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    line-height: 1.6;
+}
+
+header {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+footer {
+    flex: 0 0 auto;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    line-height: 0.5;
+}
+
+.fond {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Image de fond animée en zoom/dézoom */
+.fond::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/accueil.jpg');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation: dezoom 20s ease-in-out infinite alternate;
+}
+
+/* Animation keyframes */
+@keyframes dezoom {
+    0% {
+        background-size: 110%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/* Conteneurs des images */
+.item-gauche,
+.item-droite {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.item-gauche {
+    align-self: flex-start;
+    width: 25%;
+}
+
+.item-droite {
+    align-self: flex-end;
+    width: 20%;
+}
+
+/* Effets hover */
+.item-gauche img:hover,
+.item-droite img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Images responsives *//**/
+main > div img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}

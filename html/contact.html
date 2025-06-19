@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site dédié aux vélos selon chaque terrain. Découvrez nos modèles et les plus beaux voyages VTT.">
+    <title>contact</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/stylecontact.css">
+    <link rel="stylesheet" href="../css/stylegeneral.css">
+</head>
+<body>
+<!-- Ajouté pour commit -->
+    <header>
+        <div>
+            <nav aria-label="Menu de navigation" class="menu-principal2">
+                <ul>
+                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="modeles.html">Modeles</a></li>
+                    <li><a href="voyages.html">Voyages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-contact">
+            <h1>Contactez-nous</h1>
+            <p>Vous avez une question ou souhaitez nous envoyer un message ?<br/>
+                Veuillez compléter le formulaire ci-dessous
+            </p>
+        </div>
+    </header>
+    <main>
+        <form method="post" action="backend/traitement">
+            <div class="politesse">
+                <label for="politesse">Politesse*</label>
+                <select name="politesse" id="politesse">
+                    <option value="Monsieur">Mr</option>
+                    <option value="Madame">Mme</option>
+                </select>
+            </div>
+            <div class="nom">
+                <label for="name">Nom*</label>
+                <input type="text" name="name" id="name" placeholder="Entrez votre nom" required minlength="5" maxlength="50">
+            </div>
+            <div class="prenom">
+                <label for="surname">Prénom*</label>
+                <input type="text" name="surname" id="surname" placeholder="Entrez votre prénom" required minlength="5" maxlength="50">
+            </div>
+            <div class="rue">
+                <label for="street">Rue*</label>
+                <input type="text" name="street" id="street" placeholder="Entrez votre rue"  minlength="5" maxlength="50" required>
+            </div>
+            <div class="numero">
+                <label for="number">N*</label>
+                <input type="text" name="number" id="number" placeholder="Numéro d'habitation" pattern="[0-9A-Za-z]{1,10}" required>
+            </div>
+            <div class="localite">
+                <label for="localite">Localité*</label>
+                <input type="text" name="localité" id="localite" placeholder="Localité/code postal" required>
+                </div>
+            <div class="pays">
+                <label for="country">Pays*</label>
+                <input type="text" name="country" id="country" placeholder="Pays" pattern="[A-Za-zÀ-ÖØ-öø-ÿ '-]+" minlength="5" maxlength="50" required>
+            </div>
+            <div class="message">
+                <label for="textarea">Message</label><br/>
+                <textarea name="textarea" id="textarea" placeholder="Zone de texte"></textarea>
+            </div>
+            <div class="obligation">
+                <p>Les champs * sont obligatoire</p>
+            </div>
+            <div class="envoyer">
+                <button type="submit">Envoyer</button>
+            </div>
+
+
+        </form>
+    </main>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+            <li><a href="mentions_legales.html">Mentions légales</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div>
+        <p>&copy; 2025 monsite. Tous droits réservés</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Structure Flexbox principale */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    line-height: 1.6;
+    width: 100%;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    overflow-y: auto; /* Ajoute un scroll si nécessaire */
+    position: relative;
+    height: auto; /* S'adapte au contenu par défaut */
+
+    /* Nouveaux styles pour l'image de fond */
+    overflow: hidden; /* Coupe ce qui dépasse */
+    background-size: cover; /* Remplit le container sans déformation */
+    background-position: 0% 31%; /* Centre l'image */
+    background-repeat: no-repeat; /* Pas de répétition */
+    background-image: url("../images/contact.jpg")
+
+}
+.header-contact {
+    text-align: left;
+    padding-left: 0.5rem;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+
+
+}
+.header-contact h1 {
+    margin-bottom: 0.1rem;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 0 auto;
+    width: 100%;
+    padding: 0.5rem;
+}
+footer {
+    flex: 0 0 auto;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    line-height: 0.5;
+}
+
+/*Mise en forme du formulaireµ*/
+form {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr);
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+        "politesse politesse vide"
+        "nom prenom message"
+        "rue numero message"
+        "localite pays message"
+        "obligation obligation envoyer";
+    gap: 1rem;
+    padding: 1rem;
+}
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+select {
+    width: 50px; /* ajuste cette valeur comme tu veux */
+    max-width: 100%; /* pour éviter que ça déborde */
+}
+textarea {
+    width: 100%;   /* Prend toute la largeur disponible */
+    height: 130px; /* Hauteur fixe */
+}
+
+.politesse { grid-area: politesse; }
+.nom { grid-area: nom; }
+.prenom { grid-area: prenom; }
+.rue { grid-area: rue; }
+.numero { grid-area: numero; }
+.localite { grid-area: localite; }
+.pays { grid-area: pays; }
+.message { grid-area: message; }
+.obligation { grid-area: obligation; }
+.envoyer { grid-area: envoyer; }
+.envoyer {
+    display: flex;
+    align-items: flex-end; /* bouton en bas */
+}
+.envoyer button {
+    width: 69px; /* ajuste cette valeur comme tu veux */
+    max-width: 100%; /* pour éviter que ça déborde */
+}

@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure Flexbox principale */
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    line-height: 1.6;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+    width: 100%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    width: 100%;
+}
+section.haut h2,
+section.bas h2 {
+     text-decoration: underline red;
+     text-underline-offset: 0.3em;
+
+ }
+section.haut {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    background: #1c1c1c;
+    color: white;
+ }
+
+section.haut img {
+    width: 45%;                 /* Largeur image */
+    float: right;               /* Texte autour l'élément se placera à droite du texte */
+    margin: 0 1rem 1rem 0;      /* Marge à droite et en bas */
+}
+section.bas {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+section.bas img {
+    width: 45%;
+    float: left;
+    margin: 0 1rem 1rem 0;
+}
+div.centre {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.item-rouge {
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    cursor: pointer;
+    transition : opacity 0.5s;
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+}
+div.item-rouge a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+footer {
+    flex: 0 0 auto;
+    width: 100%;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    line-height: 0.5;
+}/**/
