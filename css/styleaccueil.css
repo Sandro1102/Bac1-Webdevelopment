@@ -50,10 +50,12 @@ footer {
 .fond {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow: hidden;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -108,7 +110,7 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Images responsives *//**/
+/* Images responsives */
 main > div img {
     display: block;
     max-width: 100%;

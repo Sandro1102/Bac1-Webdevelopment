@@ -3,7 +3,7 @@
 *::after {
     box-sizing: border-box;
 }
-/* Structure Flexbox principale */
+
 body {
     font-family: 'Trebuchet MS', Arial, sans-serif;
     display: flex;
@@ -11,8 +11,9 @@ body {
     min-height: 100vh;
     width: 100%;
     line-height: 1.6;
-    width: 100%;
+    overflow-x: clip;
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -20,18 +21,15 @@ header {
     flex: 0 0 auto;
     width: 100%;
     height: auto;
-    overflow-y: auto; /* Ajoute un scroll si nécessaire */
+    overflow-y: auto;
     position: relative;
-    height: auto; /* S'adapte au contenu par défaut */
-
-    /* Nouveaux styles pour l'image de fond */
-    overflow: hidden; /* Coupe ce qui dépasse */
-    background-size: cover; /* Remplit le container sans déformation */
-    background-position: 0% 31%; /* Centre l'image */
-    background-repeat: no-repeat; /* Pas de répétition */
+    overflow: hidden;
+    background-size: cover;
+    background-position: 0% 31%;
+    background-repeat: no-repeat;
     background-image: url("../images/contact.jpg")
-
 }
+
 .header-contact {
     text-align: left;
     padding-left: 0.5rem;
@@ -40,12 +38,12 @@ header {
     flex-direction: column;
     width: 100%;
     color: white;
-
-
 }
+
 .header-contact h1 {
     margin-bottom: 0.1rem;
 }
+
 main {
     display: flex;
     flex-direction: column;
@@ -54,6 +52,7 @@ main {
     width: 100%;
     padding: 0.5rem;
 }
+
 footer {
     flex: 0 0 auto;
     width: 100%;
@@ -65,7 +64,6 @@ footer {
     line-height: 0.5;
 }
 
-/*Mise en forme du formulaireµ*/
 form {
     display: grid;
     grid-template-columns: minmax(100px, 1fr) minmax(100px, 1fr) minmax(150px, 1fr);
@@ -78,18 +76,24 @@ form {
         "obligation obligation envoyer";
     gap: 1rem;
     padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
+
 form > div {
     display: flex;
     flex-direction: column;
 }
+
 select {
-    width: 50px; /* ajuste cette valeur comme tu veux */
-    max-width: 100%; /* pour éviter que ça déborde */
+    width: 50px;
+    max-width: 100%;
 }
+
 textarea {
-    width: 100%;   /* Prend toute la largeur disponible */
-    height: 130px; /* Hauteur fixe */
+    width: 100%;
+    height: 130px;
 }
 
 .politesse { grid-area: politesse; }
@@ -102,13 +106,43 @@ textarea {
 .message { grid-area: message; }
 .obligation { grid-area: obligation; }
 .envoyer { grid-area: envoyer; }
+
 .envoyer {
     display: flex;
-    align-items: flex-end; /* bouton en bas */
+    align-items: flex-end;
 }
+
 .envoyer button {
-    width: 69px; /* ajuste cette valeur comme tu veux */
-    max-width: 100%; /* pour éviter que ça déborde */
+    width: 69px;
+    max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "politesse politesse"
+            "nom prenom"
+            "rue numero"
+            "localite pays"
+            "message message"
+            "obligation envoyer";
+        padding: 1rem;
+    }
+
+    form > div,
+    input,
+    select,
+    textarea,
+    button {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .envoyer {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 600px) {
@@ -125,6 +159,19 @@ textarea {
             "message"
             "obligation"
             "envoyer";
+        padding: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    form > div,
+    input,
+    select,
+    textarea,
+    button {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .envoyer {
@@ -138,32 +185,5 @@ textarea {
 
     .header-contact {
         align-items: center;
-    }
-}
-
-@media (max-width: 1024px) {
-    form {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "politesse politesse"
-            "nom prenom"
-            "rue numero"
-            "localite pays"
-            "message message"
-            "obligation envoyer";
-    }
-
-    .header-contact h1 {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 1600px) {
-    .header-contact h1 {
-        font-size: 2rem;
-    }
-
-    form {
-        gap: 0.8rem;
     }
 }
