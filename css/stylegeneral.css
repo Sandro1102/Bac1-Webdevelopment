@@ -2,14 +2,13 @@
 .menu-principal, .menu-principal2 {
     width: 100%;
     padding: 1rem 0;
-
 }
 
 .menu-principal ul, .menu-principal2 ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 10rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
@@ -21,7 +20,8 @@
     position: relative;
     padding: 0.5rem 0;
 }
-.menu-principal2 a{
+
+.menu-principal2 a {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -29,6 +29,7 @@
     position: relative;
     padding: 0.5rem 0;
 }
+
 /* Menu principal animation */
 .menu-principal a::after, .menu-principal2 a::after {
     content: "";
@@ -54,6 +55,7 @@ footer > nav > ul {
     flex-wrap: wrap;
     padding: 1rem 0;
 }
+
 footer > nav > ul > li > a {
     color: white;
     text-decoration: none;
@@ -66,11 +68,11 @@ footer > div {
     padding: 1rem;
     width: 100%;
 }
-footer > div > p{
+
+footer > div > p {
     color: white;
     font-size: 0.8rem;
 }
-
 
 /* Contenu texte */
 .contenu-droite-noir,
@@ -89,7 +91,41 @@ footer > div > p{
     color: white;
     font-size: 0.8rem;
 }
+
 /* Responsive */
+@media (max-width: 1600px) {
+    .menu-principal a {
+        font-size: 1.1rem;
+    }
+
+    .menu-principal2 a {
+        font-size: 1.3rem;
+    }
+
+    .contenu-droite-noir {
+        font-size: 1rem;
+    }
+
+    .contenu-droite-blanc {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu-principal ul, .menu-principal2 ul {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .contenu-droite-noir {
+        font-size: 0.95rem;
+    }
+
+    .contenu-droite-blanc {
+        font-size: 0.75rem;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-principal ul {
         gap: 1rem;
@@ -129,38 +165,5 @@ footer > div > p{
     .contenu-droite-blanc {
         text-align: center;
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .menu-principal ul, .menu-principal2 ul {
-        gap: 3rem;
-        flex-wrap: wrap;
-    }
-
-    .contenu-droite-noir {
-        font-size: 0.95rem;
-    }
-
-    .contenu-droite-blanc {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 1600px) {
-    .menu-principal a {
-        font-size: 1.1rem;
-    }
-
-    .menu-principal2 a {
-        font-size: 1.3rem;
-    }
-
-    .contenu-droite-noir {
-        font-size: 1rem;
-    }
-
-    .contenu-droite-blanc {
-        font-size: 0.8rem;
     }
 }
