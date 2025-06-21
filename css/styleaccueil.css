@@ -115,3 +115,45 @@ main > div img {
     height: auto;
     transition: transform 0.4s ease;
 }
+
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .item-gauche,
+    .item-droite {
+        width: 80%;
+        align-self: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .item-gauche {
+        width: 35%;
+    }
+
+    .item-droite {
+        width: 30%;
+    }
+
+    main {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    .item-gauche {
+        width: 30%;
+    }
+
+    .item-droite {
+        width: 25%;
+    }
+
+    main {
+        gap: 1.5rem;
+    }
+}

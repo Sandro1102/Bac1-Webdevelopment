@@ -110,3 +110,60 @@ textarea {
     width: 69px; /* ajuste cette valeur comme tu veux */
     max-width: 100%; /* pour éviter que ça déborde */
 }
+
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "politesse"
+            "nom"
+            "prenom"
+            "rue"
+            "numero"
+            "localite"
+            "pays"
+            "message"
+            "obligation"
+            "envoyer";
+    }
+
+    .envoyer {
+        justify-content: center;
+    }
+
+    .header-contact h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .header-contact {
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "politesse politesse"
+            "nom prenom"
+            "rue numero"
+            "localite pays"
+            "message message"
+            "obligation envoyer";
+    }
+
+    .header-contact h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    .header-contact h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        gap: 0.8rem;
+    }
+}
